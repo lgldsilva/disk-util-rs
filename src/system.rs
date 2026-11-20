@@ -85,6 +85,7 @@ pub struct SystemSnapshot {
     pub ssh_errors: HashMap<String, String>,
 }
 
+#[derive(Debug, Clone, Default)]
 pub struct RamInfo {
     pub total: u64,
     pub avail: u64,
@@ -93,7 +94,10 @@ pub struct RamInfo {
 }
 
 fn read_ram() -> RamInfo {
-    let mut sys = sysinfo::System::new();
+    // sysinfo >= 0.40 torna os construtores fallible; sem RAM legível, zera o snapshot.
+    let Ok(mut sys) = sysinfo::System::new() else {
+        return RamInfo::default();
+    };
     sys.refresh_memory();
     RamInfo {
         total: sys.total_memory(),
@@ -113,9 +117,10 @@ struct DiskUsage {
 /// Em timeout, retorna `None` e o chamador reusa o snapshot anterior.
 async fn read_disk_usages(timeout: Duration) -> Option<Vec<DiskUsage>> {
     let run = tokio::task::spawn_blocking(|| {
-        let disks = sysinfo::Disks::new_with_refreshed_list();
+        let Ok(disks) = sysinfo::Disks::new_with_refreshed_list() else {
+            return Vec::new();
+        };
         disks
-            .list()
             .iter()
             .map(|d| DiskUsage {
                 mountpoint: d.mount_point().to_string_lossy().into_owned(),
