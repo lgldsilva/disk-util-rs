@@ -1,0 +1,91 @@
+# disk-util-rs — exemplo de configuração (copie p/ ~/.config/disk-util/config.toml)
+# Hierarquia: default < arquivo < env DISK_UTIL_* (nested com __) < CLI
+# Hot reload: tecla R ou SIGHUP. Campos desconhecidos = erro (deny_unknown_fields).
+
+refresh_delay = 10.0
+path = "."
+ssh_hosts = []
+show_boot = false
+sort_by = "physical"
+ascending = false
+filter = ""
+
+[timeouts]
+walk_item_secs = 3.0
+walk_cache_secs = 2.0
+ssh_secs = 4.0
+ssh_cache_secs = 30.0
+sysinfo_secs = 10.0
+disk_discover_secs = 2.0
+
+[thresholds]
+ram_warn = 70.0
+ram_crit = 85.0
+disk_warn = 75.0
+disk_crit = 90.0
+
+[rclone]
+config_paths = [
+    "~/.config/rclone/rclone.conf",
+    "~/.rclone.conf",
+]
+cache_base = "~/.cache/rclone/vfs"
+fake_size_threshold = 1125899906842624
+
+[partitions]
+device_match = [
+    "/dev/sd",
+    "/dev/nvme",
+    "/dev/mapper",
+    "lpool",
+    "rpool",
+    "disk",
+    "volume",
+]
+mountpoints = [
+    "/",
+    "/storage",
+]
+nfs_prefixes = ["nfs"]
+remote_markers = ["rclone"]
+group_by = "disk"
+
+[boot]
+paths = ["/boot"]
+
+[display]
+byte_format = "binary"
+precision = 2
+clock_format = "%H:%M:%S"
+
+[keybindings]
+quit = "q"
+filter = "f"
+search = "/"
+sort_cycle = "o"
+toggle_order = "s"
+reload_config = "R"
+rescan = "r"
+show_boot = "b"
+help = "h"
+back = "backspace"
+enter = "enter"
+ssh_errors = "d"
+
+[layout]
+reserved_rows = 8
+wide_width = 160
+
+[ssh]
+strict_host_key_checking = "accept-new"
+connect_timeout_secs = 2.0
+max_parallel = 4
+auto_discover = true
+ignore_hosts = []
+
+# Env exemplos:
+#   DISK_UTIL_REFRESH_DELAY=10
+#   DISK_UTIL_SSH_HOSTS=arm-node1,arm-node2
+#   DISK_UTIL_TIMEOUTS__SSH_SECS=4
+#   DISK_UTIL_RCLONE__CACHE_BASE=~/.cache/rclone/vfs
+# CLI: --watch 10 --ssh-hosts arm-node1 --show-boot --once --only-volumes

@@ -1,0 +1,39 @@
+[package]
+name = "disk-util-rs"
+version = "0.1.0"
+edition = "2021"
+description = "Interactive disk, RAM and system resource monitor TUI (Rust)"
+license = "MIT"
+
+[[bin]]
+name = "disk-util-rs"
+path = "src/main.rs"
+
+[profile.release]
+lto = true
+strip = true
+codegen-units = 1
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+tokio-util = { version = "0.7", features = ["full"] }
+ratatui = "0.30.2"
+crossterm = { version = "0.29", features = ["event-stream"] }
+clap = { version = "4", features = ["derive", "env"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+figment = { version = "0.10", features = ["toml", "env", "json"] }
+toml = "0.8"
+sysinfo = "0.36"
+jwalk = "0.8"
+rayon = "1"
+dashmap = "6"
+walkdir = "2"
+anyhow = "1"
+dirs = "5"
+
+[dev-dependencies]
+proptest = "1"
+insta = { version = "1", features = ["filters"] }
+tempfile = "3.27.0"
+tokio = { version = "1", features = ["full"] }

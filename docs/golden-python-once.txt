@@ -1,0 +1,45 @@
+# golden F0 — saída de referência do Python (schema, não valores).
+# gerador: python3 scripts/disk_usage.py --once --ssh-hosts '' /tmp
+# origin: private dotfiles script (disk_usage.py)
+# máscaras: <SIZE> tamanhos, <PCT> percentuais, <TIME> horários.
+# linhas com '#' são meta e ignoradas pelos testes de schema.
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Antigravity Disk Usage & System Monitor | Diretório: /tmp | Hora: <TIME>   │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────────── Memória RAM & Swap ─────────────────────────────╮
+│  RAM          T:<SIZE>      U:<SIZE>     L:<SIZE>  █████░░░░░            <PCT>  │
+│  SWAP          T:<SIZE>       U:<SIZE>      L:<SIZE>  █████████░           <PCT>  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────── Discos Locais ────────────────────────────────╮
+│  Montagem                     Total     Usado     Livre                 Uso  │
+│  /                             <SIZE>      <SIZE>      <SIZE>  [███░░░░░░░] <PCT>  │
+│  /mnt/cache-ssd                <SIZE>      <SIZE>     <SIZE>  [█████░░░░░] <PCT>  │
+│  /mnt/cache-ssd/rclone...      <SIZE>      <SIZE>      <SIZE>  [██░░░░░░░░] <PCT>  │
+│  /mnt/cache-ssd/rclone...      <SIZE>      <SIZE>      <SIZE>  [██░░░░░░░░] <PCT>  │
+│  /mnt/cache-ssd/rclone...      <SIZE>      <SIZE>      <SIZE>  [█░░░░░░░░░] <PCT>  │
+│  /mnt/cache-ssd/rclone...      <SIZE>      <SIZE>      <SIZE>  [██░░░░░░░░] <PCT>  │
+│  /mnt/cache-ssd/rclone...      <SIZE>     <SIZE>      <SIZE>   [░░░░░░░░░░] <PCT>  │
+│  /mnt/externalDisk             <SIZE>      <SIZE>      <SIZE>  [█████████░] <PCT>  │
+│  /srv/docker-shared/Co...      <SIZE>      <SIZE>      <SIZE>  [███░░░░░░░] <PCT>  │
+│  /storage                      <SIZE>      <SIZE>      <SIZE>  [████████░░] <PCT>  │
+│  /storage/Downloads/ex...      <SIZE>      <SIZE>      <SIZE>  [█████████░] <PCT>  │
+│  FÍSICO                        <SIZE>      <SIZE>      <SIZE>  [████████░░] <PCT>  │
+│  NUVEM                         <SIZE>      <SIZE>      <SIZE>  [██░░░░░░░░] <PCT>  │
+│  VIRTUAL                      <SIZE>      <SIZE>      <SIZE>  [████░░░░░░] <PCT>  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────── Navegador de Diretórios: /tmp ────────────────────────╮
+│     Nome do Item   Tipo       Tamanho Físico   Tamanho Lógico   Proporção    │
+│     zcode-3.16.2…  Pasta          <SIZE>       <SIZE>    ████████    │
+│     claude-1000/   Pasta          <SIZE>       <SIZE>    ███░░░░░    │
+│     ZCode-3.16.2…  Arquivo        <SIZE>       <SIZE>    █░░░░░░░    │
+│     go-build4156…  Pasta          <SIZE>       <SIZE>    █░░░░░░░    │
+│     pi-subagents…  Pasta           <SIZE>        <SIZE>    ░░░░░░░░    │
+│     node-compile…  Pasta           <SIZE>        <SIZE>    ░░░░░░░░    │
+│     go-build1193…  Pasta           <SIZE>        <SIZE>    ░░░░░░░░    │
+│     go-build1814…  Pasta           <SIZE>        <SIZE>    ░░░░░░░░    │
+│     pi-lens-ast-…  Pasta           <SIZE>         <SIZE>    ░░░░░░░░    │
+│     jackui-torre…  Pasta           <SIZE>         <SIZE>    ░░░░░░░░    │
+│     .bun-1000-89…  Arquivo         <SIZE>        <SIZE>    ░░░░░░░░    │
+│     jiti/          Pasta            <SIZE>         <SIZE>    ░░░░░░░░    │
+│     .bun-1000-e8…  Arquivo          <SIZE>         <SIZE>    ░░░░░░░░    │
+╰──────────────────────────────────────────────────────────────────────────────╯

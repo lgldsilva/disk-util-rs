@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="632" height="406" viewBox="0 0 632 406" font-family="Menlo,DejaVu Sans Mono,monospace" font-size="13">
+<rect width="100%" height="100%" fill="#0c0c0c"/>
+<text x="16" y="29" fill="#569cd6">disk-util-rs | Diretório: /tmp</text>
+<text x="16" y="46" fill="#4ec9b0">== RAM ==</text>
+<text x="16" y="63" fill="#d4d4d4">RAM total=31.30 GiB used=9.33 GiB avail=21.97 GiB pct=29.8%</text>
+<text x="16" y="80" fill="#d4d4d4">SWAP total=12.00 GiB used=3.81 GiB free=8.19 GiB pct=31.8%</text>
+<text x="16" y="97" fill="#4ec9b0">== Volumes ==</text>
+<text x="16" y="114" fill="#d4d4d4">nvme0n1 (/,/srv/data) total=465G used=178G free=287G pct=38.4%</text>
+<text x="16" y="131" fill="#d4d4d4">sda (/mnt/cache-ssd) total=219G used=74.1G free=144G pct=33.8%</text>
+<text x="16" y="148" fill="#d4d4d4">sdb (/mnt/pool,/tmp) total=2.7T used=1.8T free=937G pct=65.9%</text>
+<text x="16" y="165" fill="#d4d4d4">sdc (/mnt/backup,/mnt/backup2) total=2.7T used=1.8T free=905G pct=67.1%</text>
+<text x="16" y="182" fill="#d4d4d4">/mnt/cache-ssd/rclone/mounts/cloud-drive [rclone] total=— used=— free=— cloud</text>
+<text x="16" y="199" fill="#d4d4d4">/mnt/cache-ssd/rclone/mounts/cloud-work [rclone] total=— used=— free=— cloud</text>
+<text x="16" y="216" fill="#d4d4d4">/mnt/cache-ssd/rclone/mounts/cloud-media [rclone] total=— used=— free=— cloud</text>
+<text x="16" y="233" fill="#d4d4d4">FÍSICO total=6.0T used=3.8T free=2.2T</text>
+<text x="16" y="250" fill="#d4d4d4">NUVEM total=0B used=0B free=0B</text>
+<text x="16" y="267" fill="#d4d4d4">VIRTUAL total=6.0T used=3.8T free=2.2T</text>
+<text x="16" y="284" fill="#4ec9b0">== Pastas ==</text>
+<text x="16" y="301" fill="#d4d4d4">dtop-wt-target type=dir physical=2.34 GiB logical=2.33 GiB status=ok</text>
+<text x="16" y="318" fill="#d4d4d4">dtop-wt2-target type=dir physical=2.04 GiB logical=2.03 GiB status=ok</text>
+<text x="16" y="335" fill="#d4d4d4">glm-review-target type=dir physical=1.81 GiB logical=1.81 GiB status=ok</text>
+<text x="16" y="352" fill="#d4d4d4">glm-prefix-target type=dir physical=1.81 GiB logical=1.81 GiB status=ok</text>
+<text x="16" y="369" fill="#d4d4d4">dtop-main-target type=dir physical=418.76 MiB logical=414.49 MiB status=ok</text>
+<text x="16" y="386" fill="#d4d4d4">node-compile-cache type=dir physical=253.21 MiB logical=177.81 MiB status=ok</text>
+</svg>
