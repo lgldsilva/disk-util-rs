@@ -25,7 +25,7 @@ serde_json = "1"
 figment = { version = "0.10", features = ["toml", "env", "json"] }
 toml = "0.8"
 sysinfo = "0.36"
-jwalk = "0.8"
+jwalk = "0.9"
 rayon = "1"
 dashmap = "6"
 walkdir = "2"
