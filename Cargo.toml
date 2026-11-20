@@ -30,7 +30,7 @@ rayon = "1"
 dashmap = "6"
 walkdir = "2"
 anyhow = "1"
-dirs = "5"
+dirs = "7"
 
 [dev-dependencies]
 proptest = "1"
