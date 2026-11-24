@@ -1,5 +1,5 @@
 /target
 
+# insta pending snapshots (file-based and inline); review with `cargo insta review`
 *.snap.new
-*.snap.new.*
 *.pending-snap
